@@ -8,7 +8,7 @@ public class dtoClass {
     private int yChuk;
     private int zChuk;
 
-    // Getter 및 Setter 메서드
+    // (Getter 및 Setter 메서드)
 
     @Override
     public String toString() {
