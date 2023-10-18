@@ -6,7 +6,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.dto.dtoClass;
+import com.example.demo.service.threeService;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 
@@ -19,11 +21,13 @@ public class MainController {
     //     return "백엔드에서의 데이터";
     // }
 
+    @Autowired
+    private threeService threeService;
+
     @PostMapping("/api/data")
     public String receiveData(@RequestBody dtoClass data) {
-        // data 객체를 사용하여 데이터 처리
-        System.out.println(data);
-        return "백엔드에서의 데이터: " + data.toString();
+        String result = threeService.processData(data);
+        return result;
     }
     
 }
