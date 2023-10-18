@@ -1,71 +1,38 @@
 package com.example.demo.dto;
 
+import lombok.Getter;
+import lombok.Setter;
+
 public class dtoClass {
+
+    @Getter @Setter
     private int width;
-    private int height;    
+
+    @Getter @Setter
+    private int height;
+
+    @Getter @Setter
     private int vertical;
+
+    @Getter @Setter
     private int xChuk;
+
+    @Getter @Setter
     private int yChuk;
+
+    @Getter @Setter
     private int zChuk;
-
-    // (Getter 및 Setter 메서드) test
-
-    // @Override
-    // public String toString() {
-    //     return "dtoClass{" +
-    //             "width=" + width +
-    //             ", height=" + height +
-    //             ", vertical=" + vertical +
-    //             ", xChuk=" + xChuk +
-    //             ", yChuk=" + yChuk +
-    //             ", zChuk=" + zChuk +
-    //             '}';
-    // }
-    public int getWidth() {
-        return width;
+    
+    @Override
+    public String toString() {
+        return "dtoClass{" +
+                "width=" + width +
+                ", height=" + height +
+                ", vertical=" + vertical +
+                ", xChuk=" + xChuk +
+                ", yChuk=" + yChuk +
+                ", zChuk=" + zChuk +
+                '}';
     }
-
-    public void setWidth(int width) {
-        this.width = width;
-    }
-
-    public int getHeight() {
-        return height;
-    }
-
-    public void setHeight(int height) {
-        this.height = height;
-    }
-
-    public int getVertical() {
-        return vertical;
-    }
-
-    public void setVertical(int vertical) {
-        this.vertical = vertical;
-    }
-
-    public int getxChuk() {
-        return xChuk;
-    }
-
-    public void setxChuk(int xChuk) {
-        this.xChuk = xChuk;
-    }
-
-    public int getyChuk() {
-        return yChuk;
-    }
-
-    public void setyChuk(int yChuk) {
-        this.yChuk = yChuk;
-    }
-
-    public int getzChuk() {
-        return zChuk;
-    }
-
-    public void setzChuk(int zChuk) {
-        this.zChuk = zChuk;
-    }
+    
 }
