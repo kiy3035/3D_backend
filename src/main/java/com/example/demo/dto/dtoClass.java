@@ -15,24 +15,12 @@ public class dtoClass {
     private int vertical;
 
     @Getter @Setter
-    private int xChuk;
+    private int x_chuk;
 
     @Getter @Setter
-    private int yChuk;
+    private int y_chuk;
 
     @Getter @Setter
-    private int zChuk;
-    
-    @Override
-    public String toString() {
-        return "dtoClass{" +
-                "width=" + width +
-                ", height=" + height +
-                ", vertical=" + vertical +
-                ", xChuk=" + xChuk +
-                ", yChuk=" + yChuk +
-                ", zChuk=" + zChuk +
-                '}';
-    }
+    private int z_chuk;
     
 }
