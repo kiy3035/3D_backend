@@ -23,12 +23,12 @@ public class threeServiceImpl implements threeService {
         try {
             System.out.println("1111111111111111");
             // threeMapper를 사용하여 데이터베이스에서 데이터 조회
-            threeMapper.selectYourEntities();
+            threeMapper.selectYourEntities(data);
             System.out.println("2222222222222222");
             // ObjectMapper를 사용하여 DTO 객체를 JSON 문자열로 변환
-            // ObjectMapper objectMapper = new ObjectMapper();
+            ObjectMapper objectMapper = new ObjectMapper();
             // String json = objectMapper.writeValueAsString(results);
-            // String json = objectMapper.writeValueAsString(data);
+            String json = objectMapper.writeValueAsString(data);
 
             // JSON 문자열을 반환
             return null;
