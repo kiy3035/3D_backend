@@ -13,8 +13,8 @@
              , Y_CHUK
              , Z_CHUK
         ) VALUES (
-               '3D'
-             , '테스트중'
+               #{title}
+             , #{bigo}
              , #{width}
              , #{height}
              , #{vertical}
