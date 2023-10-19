@@ -9,7 +9,8 @@ import com.example.demo.dto.dtoClass;
 
 @Mapper
 public interface threeMapper {
-    List<dtoClass> selectYourEntities(); // 예제 메서드
+    void selectYourEntities(); // 예제 메서드
+    // List<dtoClass> selectYourEntities(); // 예제 메서드
 
     // LinkedHashMap<String, Object> selectTest();
 
