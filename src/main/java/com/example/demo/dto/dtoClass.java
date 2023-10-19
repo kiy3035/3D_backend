@@ -6,6 +6,12 @@ import lombok.Setter;
 public class dtoClass {
 
     @Getter @Setter
+    private String title;
+
+    @Getter @Setter
+    private String bigo;
+
+    @Getter @Setter
     private int width;
 
     @Getter @Setter
