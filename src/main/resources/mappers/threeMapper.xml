@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper
-PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.example.demo.mapper.threeMapper">
-    <update id="selectYourEntities" resultType="com.example.demo.dto.dtoclass">
+    <update id="selectYourEntities" parameterType="com.example.demo.dto.dtoClass">
         UPDATE THREE_D_TEST
                 SET CNTR_TYP         = 'SS'
  		      WHERE MAINFEST_NO = 'TESTLSH101701'
     </update>
+
+    <!-- <select id="selectTest" parameterType="HashMap" resultType="java.util.LinkedHashMap">
+	 	SELECT '123' 
+         FROM DUAL
+	</select> -->
+
+
 </mapper>
