@@ -1,5 +1,5 @@
 package com.example.demo.mapper;
-import java.util.LinkedHashMap;
+
 import java.util.List;
 import java.util.Map;
 
@@ -9,10 +9,9 @@ import com.example.demo.dto.dtoClass;
 
 @Mapper
 public interface threeMapper {
-    void selectYourEntities(dtoClass data); // 예제 메서드
-    // List<dtoClass> selectYourEntities(); // 예제 메서드
-
-    // LinkedHashMap<String, Object> selectTest();
-
+    void insertDtl(dtoClass data);
+    void insertMst(dtoClass data);
+    List<dtoClass> selectTitles();
+    List<Map<String, Object>> selectDatas(String title);
 
 }

@@ -28,5 +28,8 @@ public class dtoClass {
 
     @Getter @Setter
     private int z_chuk;
+
+    @Getter @Setter
+    private String scene;
     
 }

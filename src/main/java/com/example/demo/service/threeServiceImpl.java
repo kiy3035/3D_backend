@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,6 +12,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Service
 public class threeServiceImpl implements threeService {
+    
     private final threeMapper threeMapper;
 
     @Autowired
@@ -18,19 +20,14 @@ public class threeServiceImpl implements threeService {
         this.threeMapper = threeMapper;
     }
 
-    public String processData(dtoClass data) {
-        // threeMapper.selectTest();
+    public String inputData(dtoClass data) {
+        
         try {
             System.out.println("1111111111111111");
-            // threeMapper를 사용하여 데이터베이스에서 데이터 조회
-            threeMapper.selectYourEntities(data);
+            threeMapper.insertMst(data);
+            threeMapper.insertDtl(data);
             System.out.println("2222222222222222");
-            // ObjectMapper를 사용하여 DTO 객체를 JSON 문자열로 변환
-            ObjectMapper objectMapper = new ObjectMapper();
-            // String json = objectMapper.writeValueAsString(results);
-            String json = objectMapper.writeValueAsString(data);
 
-            // JSON 문자열을 반환
             return null;
         } 
         catch (Exception e) {
@@ -39,4 +36,15 @@ public class threeServiceImpl implements threeService {
             return "오류 발생";
         }
     }
+    
+
+    public List<dtoClass> getTitles() {
+        return threeMapper.selectTitles();
+    }    
+
+    
+    public List<Map<String, Object>> getDatas(String title) {
+        return threeMapper.selectDatas(title);
+    }    
+
 }
