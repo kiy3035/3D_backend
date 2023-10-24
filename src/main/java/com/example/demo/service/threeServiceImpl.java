@@ -25,13 +25,13 @@ public class threeServiceImpl implements threeService {
              // 첫 번째 데이터만을 대상으로 mst 호출
              if (!dataList.isEmpty()) {
                 threeMapper.insertMst(dataList.get(0));
+                // 모든 데이터에 대해 dtl 호출
+                for (dtoClass data : dataList) {
+                    // 각 data 객체를 MyBatis 매퍼로 전달
+                    threeMapper.insertDtl(data); // 여기서 발생 
+                }
             }
             
-            // 모든 데이터에 대해 dtl 호출
-            for (dtoClass data : dataList) {
-                // 각 data 객체를 MyBatis 매퍼로 전달
-                threeMapper.insertDtl(data); // 여기서 발생 
-            }
             System.out.println("2222222222222222");
 
             return null;
