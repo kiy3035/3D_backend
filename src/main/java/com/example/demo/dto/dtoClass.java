@@ -31,5 +31,8 @@ public class dtoClass {
 
     @Getter @Setter
     private String scene;
+
+    @Getter @Setter
+    private String save;
     
 }

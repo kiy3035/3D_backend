@@ -22,14 +22,33 @@ public class threeServiceImpl implements threeService {
     public String inputData(List<dtoClass> dataList) {
         try {
             System.out.println("1111111111111111");
-             // 첫 번째 데이터만을 대상으로 mst 호출
-             if (!dataList.isEmpty()) {
-                threeMapper.insertMst(dataList.get(0));
-                // 모든 데이터에 대해 dtl 호출
-                for (dtoClass data : dataList) {
-                    // 각 data 객체를 MyBatis 매퍼로 전달
-                    threeMapper.insertDtl(data); // 여기서 발생 
+            if (!dataList.isEmpty()) {
+
+                dtoClass firstData = dataList.get(0); // 첫 번째 데이터만 대상
+
+                if ("insert".equals(firstData.getSave())) {
+                    threeMapper.insertMst(dataList.get(0)); // 첫 번째 데이터만 mst 호출
+                    
+                    for (dtoClass data : dataList) {    // 모든 데이터에 대해 dtl 호출
+                        threeMapper.insertDtl(data);
+                    }
                 }
+                else if ("update".equals(firstData.getSave())) {
+                    threeMapper.updateMst(dataList.get(0)); // 첫 번째 데이터만 mst 호출
+                    threeMapper.updateDtl1(dataList.get(0)); // 삭제
+                    
+                    for (dtoClass data : dataList) {    // 새로 생성
+                        threeMapper.updateDtl2(data);
+                    }
+                }
+                else if ("delete".equals(firstData.getSave())) {
+                    threeMapper.deleteMst(dataList.get(0)); // 첫 번째 데이터만 mst 호출
+                    
+                    for (dtoClass data : dataList) {    // 모든 데이터에 대해 dtl 호출
+                        threeMapper.deleteDtl(data);
+                    }
+                }
+
             }
             
             System.out.println("2222222222222222");
