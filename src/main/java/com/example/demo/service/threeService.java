@@ -6,7 +6,7 @@ import java.util.Map;
 import com.example.demo.dto.dtoClass;
 
 public interface threeService {
-    String inputData(dtoClass data);
+    String inputData(List<dtoClass> data);
     List<dtoClass> getTitles();
     List<Map<String, Object>> getDatas(String title);
 }

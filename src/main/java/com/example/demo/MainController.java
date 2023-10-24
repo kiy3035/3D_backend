@@ -46,9 +46,9 @@ public class MainController {
     }
 
     @PostMapping("/api/data")
-    public String receiveData(@RequestBody dtoClass data) { // RequestBody : HTTP 요청의 본문(body) 데이터를 Java 객체로 변환하는 데 사용
-        System.out.println("데이타:" + data);
-        String result = threeService.inputData(data);
+    public String receiveData(@RequestBody List<dtoClass> dataList) { // RequestBody : HTTP 요청의 본문(body) 데이터를 Java 객체로 변환하는 데 사용
+        System.out.println("데이타:" + dataList);
+        String result = threeService.inputData(dataList);
         return result;
         
     }
