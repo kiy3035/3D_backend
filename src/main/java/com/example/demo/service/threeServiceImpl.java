@@ -42,7 +42,9 @@ public class threeServiceImpl implements threeService {
                     }
                 }
                 else if ("delete".equals(firstData.getSave())) {
-                    threeMapper.deleteDtl(dataList.get(0));
+                    for (dtoClass data : dataList) {    
+                        threeMapper.deleteDtl(data);
+                    }
                     threeMapper.deleteMst(dataList.get(0)); 
                 }
 
