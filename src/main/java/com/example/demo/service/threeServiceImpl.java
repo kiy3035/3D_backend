@@ -42,11 +42,8 @@ public class threeServiceImpl implements threeService {
                     }
                 }
                 else if ("delete".equals(firstData.getSave())) {
-                    threeMapper.deleteMst(dataList.get(0)); // 첫 번째 데이터만 mst 호출
-                    
-                    for (dtoClass data : dataList) {    // 모든 데이터에 대해 dtl 호출
-                        threeMapper.deleteDtl(data);
-                    }
+                    threeMapper.deleteDtl(dataList.get(0));
+                    threeMapper.deleteMst(dataList.get(0)); 
                 }
 
             }

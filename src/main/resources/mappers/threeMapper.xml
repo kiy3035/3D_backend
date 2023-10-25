@@ -45,7 +45,7 @@
              , #{scene}
         )
     </insert>
-    
+
     <!-- 추가 -->
     <insert id="insertMst" parameterType="com.example.demo.dto.dtoClass">
         INSERT INTO THREE_M (
@@ -79,6 +79,17 @@
         )
     </insert>
 
+    <!-- 삭제 -->
+    <delete id="deleteDtl" parameterType="com.example.demo.dto.dtoClass">
+        DELETE 
+          FROM THREE_D
+         WHERE TITLE = #{title}
+    </delete>
+    <delete id="deleteMst" parameterType="com.example.demo.dto.dtoClass">
+        DELETE 
+          FROM THREE_M
+         WHERE TITLE = #{title}
+    </delete>
 
 
 
