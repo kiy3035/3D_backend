@@ -3,7 +3,6 @@ package com.example.demo.service;
 import java.util.List;
 import java.util.Map;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.dto.dtoClass;
@@ -14,7 +13,6 @@ public class threeServiceImpl implements threeService {
     
     private final threeMapper threeMapper;
     
-    @Autowired
     public threeServiceImpl(threeMapper threeMapper) {
         this.threeMapper = threeMapper;
     }
