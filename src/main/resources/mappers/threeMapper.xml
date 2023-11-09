@@ -6,10 +6,12 @@
     <select id="selectTitles" parameterType="HashMap" resultType="java.util.LinkedHashMap">
         SELECT A.TITLE
              , A.BIGO
+             , DECODE(B.SCENE, 'wh', '창고', '선박') AS SCENE
+             , B.SCENE AS SCENECODE
           FROM THREE_M A
              , THREE_D B
          WHERE A.TITLE = B.TITLE
-      GROUP BY A.TITLE,A.BIGO
+      GROUP BY A.TITLE, A.BIGO, B.SCENE
 	  </select>
     <select id="selectDatas" parameterType="String" resultType="java.util.LinkedHashMap">
         SELECT A.TITLE
