@@ -1,24 +1,38 @@
 package com.example.demo.dto;
 
+import lombok.Getter;
+import lombok.Setter;
+
 public class dtoClass {
+
+    @Getter @Setter
+    private String title;
+
+    @Getter @Setter
+    private String bigo;
+
+    @Getter @Setter
     private int width;
-    private int height;    
+
+    @Getter @Setter
+    private int height;
+
+    @Getter @Setter
     private int vertical;
-    private int xChuk;
-    private int yChuk;
-    private int zChuk;
 
-    // Getter 및 Setter 메서드
+    @Getter @Setter
+    private int x_chuk;
 
-    @Override
-    public String toString() {
-        return "dtoClass{" +
-                "width=" + width +
-                ", height=" + height +
-                ", vertical=" + vertical +
-                ", xChuk=" + xChuk +
-                ", yChuk=" + yChuk +
-                ", zChuk=" + zChuk +
-                '}';
-    }
+    @Getter @Setter
+    private int y_chuk;
+
+    @Getter @Setter
+    private int z_chuk;
+
+    @Getter @Setter
+    private String scene;
+
+    @Getter @Setter
+    private String save;
+    
 }
